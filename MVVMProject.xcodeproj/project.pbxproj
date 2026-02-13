@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1293C1CB2F3F335700BB6EAF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1293C1CA2F3F335700BB6EAF /* .swiftlint.yml */; };
+		1293C2552F3F47A700BB6EAF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1293C2542F3F47A700BB6EAF /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1293C1AD2F3F32C900BB6EAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,10 +32,11 @@
 		1293C1962F3F32C800BB6EAF /* MVVMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1293C1AC2F3F32C900BB6EAF /* MVVMProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1293C1B62F3F32C900BB6EAF /* MVVMProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1293C1CA2F3F335700BB6EAF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1293C1BE2F3F32C900BB6EAF /* Exceptions for "MVVMProject" folder in "MVVMProject" target */ = {
+		1293C22B2F3F3B4800BB6EAF /* Exceptions for "MVVMProject" folder in "MVVMProject" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -43,7 +49,7 @@
 		1293C1982F3F32C800BB6EAF /* MVVMProject */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1293C1BE2F3F32C900BB6EAF /* Exceptions for "MVVMProject" folder in "MVVMProject" target */,
+				1293C22B2F3F3B4800BB6EAF /* Exceptions for "MVVMProject" folder in "MVVMProject" target */,
 			);
 			path = MVVMProject;
 			sourceTree = "<group>";
@@ -65,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1293C2552F3F47A700BB6EAF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,7 @@
 		1293C18D2F3F32C800BB6EAF = {
 			isa = PBXGroup;
 			children = (
+				1293C1CA2F3F335700BB6EAF /* .swiftlint.yml */,
 				1293C1982F3F32C800BB6EAF /* MVVMProject */,
 				1293C1AF2F3F32C900BB6EAF /* MVVMProjectTests */,
 				1293C1B92F3F32C900BB6EAF /* MVVMProjectUITests */,
@@ -115,6 +123,7 @@
 				1293C1922F3F32C800BB6EAF /* Sources */,
 				1293C1932F3F32C800BB6EAF /* Frameworks */,
 				1293C1942F3F32C800BB6EAF /* Resources */,
+				1293C1CC2F3F336300BB6EAF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -125,6 +134,7 @@
 			);
 			name = MVVMProject;
 			packageProductDependencies = (
+				1293C2542F3F47A700BB6EAF /* SnapKit */,
 			);
 			productName = MVVMProject;
 			productReference = 1293C1962F3F32C800BB6EAF /* MVVMProject.app */;
@@ -208,6 +218,9 @@
 			);
 			mainGroup = 1293C18D2F3F32C800BB6EAF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1293C2532F3F47A700BB6EAF /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1293C1972F3F32C800BB6EAF /* Products */;
 			projectDirPath = "";
@@ -225,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1293C1CB2F3F335700BB6EAF /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +257,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1293C1CC2F3F336300BB6EAF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  cd \"${SRCROOT}\"\n  swiftlint --config .swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1293C1922F3F32C800BB6EAF /* Sources */ = {
@@ -290,11 +325,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WD33WT4A46;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MVVMProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,11 +358,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WD33WT4A46;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MVVMProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -591,6 +628,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1293C2532F3F47A700BB6EAF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1293C2542F3F47A700BB6EAF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1293C2532F3F47A700BB6EAF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1293C18E2F3F32C800BB6EAF /* Project object */;
 }

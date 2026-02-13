@@ -1,0 +1,541 @@
+# https://realm.github.io/SwiftLint/rule-directory.html
+
+disabled_rules: # rule identifiers to exclude from running
+  # Rationale: Xcode auto indentation can cause this warning
+  - closure_end_indentation
+
+  # Rationale: Encourages usage of assertion failures and thinking about what you are returning
+  - conditional_returns_on_newline
+
+  # Discuss
+  # Rationale: Arbitrary restriction
+  - cyclomatic_complexity
+
+  # Rationale: Arbitrary restriction
+  - discouraged_object_literal
+
+  # Rationale: Current implementation triggers on system APIs. Disabling until rule is configurable to fix this. An optional collection can have two "empty" states: nil and empty. If nil and empty are to mean different things, consider modeling it differently using an enum with associated values.
+  - discouraged_optional_collection
+
+  # Rationale: Doesn't really add any clarity
+  - explicit_acl
+
+  # Rationale: Heavy handed in telling someone how to code
+  - explicit_enum_raw_value
+
+  # Rationale: Doesn't really add any clarity
+  - explicit_top_level_acl
+
+  # Rationale: We don't want to fight the language
+  - explicit_type_interface
+
+  # Rationale: Unclear on what it enforces
+  - extension_access_modifier
+
+  # Rationale: Arbitrary restriction
+  - file_length
+
+  # Rationale: Arbitrary restriction
+  - function_body_length
+
+  # Rationale: Arbitrary restriction
+  - function_parameter_count
+
+  # Rationale: Arbitrary restriction
+  - generic_type_name
+
+  # Rationale: Arbitrary restriction
+  - identifier_name
+
+  # Rationale: Being concise and not fighting the language. We allow engineers to decide when and how to use implicit returns based on their best judgement.
+  - implicit_return
+
+  # Rationale: Prevents coder error, doesn't crash, makes coder be explicit about their assumptions
+  - implicitly_unwrapped_optional
+  
+  # Rationale: Arbitrary restriction
+  - large_tuple
+
+  # Rationale: Arbitrary restriction
+  - let_var_whitespace
+
+  # Rationale: Arbitrary restriction
+  - line_length
+
+  # Rationale: Xcode auto indentation can cause this warning
+  - literal_expression_end_indentation
+
+  # Rationale: Functions with parameters followed by multiple closures trigger this warning when placed on separate lines. The default Xcode formatting for this behavior is inconsistent, and auto indentation is poor.
+  - multiline_arguments
+
+  # Rationale: Functions with closures followed by a parenthesis trigger this warning.
+  - multiline_arguments_brackets
+  
+  # Should fix missing items. Discuss
+  # Rationale: Arbitrary restriction.
+  # - multiline_literal_brackets
+  
+  # Should fix missing items. Discuss
+  # Rationale: Arbitrary restriction.
+  # - multiline_parameters_brackets
+
+  # Rationale: Arbitrary restriction
+  - nesting
+
+  # Rationale: We don't use nimble
+  - nimble_operator
+
+  # Rationale: Protocol conformance can require public declaration
+  - no_extension_access_modifier
+
+  # Rationale: Heavy handed in telling someone how to program a specific way
+  - no_grouping_extension
+
+  # Rationale: Unintuitive
+  - number_separator
+
+  # Rationale: Doesn't really add anything other than telling someone how to code
+  - object_literal
+
+  # Rationale: Old outdated convention
+  - prefixed_toplevel_constant
+
+  # Rationale: We don't use Quick
+  - quick_discouraged_call
+
+  # Rationale: We don't use Quick
+  - quick_discouraged_focused_test
+
+  # Rationale: We don't use Quick
+  - quick_discouraged_pending_test
+
+  # Rationale: Only should be enabled when the API uses snake case.
+  - raw_value_for_camel_cased_codable_enum
+
+  # Rationale: There are cases where you may want to declare the string enum value explicitly
+  - redundant_string_enum_value
+
+  # Rationale: Do not require a deinit function, as it is not always necessary.
+  - required_deinit
+
+  # Rationale: Provides consistency and clarity in coding style and is less code
+  - sorted_first_last
+
+  # Rationale: Provides no value
+  - sorted_imports
+
+  # Rationale: Usage of proper access level
+  - strict_fileprivate
+
+  # Rationale: Doesn't really add anything other than telling someone how to code
+  - switch_case_on_newline
+
+  # Rationale: Naming the parameters can be important for clarity in some instances
+  - trailing_closure
+
+  # Discuss
+  # Rationale: Xcode auto indentation can cause this warning
+  - trailing_whitespace
+
+  # Rationale: Arbitrary restriction
+  - type_body_length
+
+  # Rationale: Arbitrary restriction
+  # Defalut: (min_length) w/e: 3/0, (max_length) w/e: 40/1000, excluded: [], allowed_symbols: [], validates_start_with_lowercase: true, validate_protocols: true
+  - type_name
+
+  # Rationale: For typed parameters in closures, parentheses are required by swift, making this rule inherently inconsistent.
+  - unneeded_parentheses_in_closure_argument
+ 
+  # Rationale: Custom rule overrides to allow todos when issue links are provided.
+  - todo
+  
+  # Discuss
+  # Rationale: Allows for more readable code when defining new properties or functions on types.
+  - vertical_whitespace_opening_braces
+
+  # Discuss
+  # Rationale: Unnecessary whitespace.
+  - vertical_whitespace_between_cases
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - void_return
+  
+  # Rationale: Allow using XCTest functions as defined by the framework.
+  - xct_specific_matcher
+
+  # Rationale: Arbitrary restriction. The default bundle will be suitable for most projects.
+  - nslocalizedstring_require_bundle
+  
+  # Rationale: The current rule set does not allow for enforcement of our preferred ordering (namely, private classes at the bottom of the file).
+  - file_types_order
+  
+  # Rationale: The benefit of this rule is a minor performance improvement, at the potential cost of legibility. Leave up to the developer's discrection.
+  - reduce_into
+  
+opt_in_rules: # some rules are turned off by default, so you need to opt-in
+
+  # Rationale: When using map, we think of it being used to transform a current array into something else
+  - array_init
+
+  # Rationale: Provides consistency in coding style
+  - attributes
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - block_based_kvo
+
+  # Rationale: Prevents retain cycles
+  - class_delegate_protocol
+
+  # Rationale: Provides consistency in coding style
+  - closing_brace
+
+  # Rationale: Provides consistency in coding style
+  - closure_parameter_position
+
+  # Rationale: Provides consistency in coding style
+  - closure_spacing
+
+  # Rationale: Provides consistency in coding style
+  - colon
+
+  # Rationale: Provides consistency in coding style
+  - comma
+
+  # Rationale: Provides consistency in coding style
+  - compiler_protocol_init
+
+  # Rationale: A more clear and consise way to check if something exists
+  - contains_over_filter_count
+  
+  # Rationale: A more clear and consise way to check if something exists
+  - contains_over_filter_is_empty
+
+  # Rationale: A more clear and consise way to check if something exists
+  - contains_over_first_not_nil
+
+  # Rationale: A more clear and consise way to check if a range exists
+  - contains_over_range_nil_comparison
+  
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - control_statement
+
+  # Rationale: Encourages proper memory practices
+  - discarded_notification_center_observer
+
+  # Rationale: Prevents coder error
+  - discouraged_direct_init
+
+  # Rationale: A nil bool is a tri-state variable which can be modeled more clearly
+  - discouraged_optional_boolean
+
+  # Rationale: Imports are not required more than once.
+  - duplicate_imports
+
+  # Rationale: Prevents coder error
+  - dynamic_inline
+
+  # Rationale: Provides consistency in coding style
+  - empty_collection_literal
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - empty_count
+
+  # Rationale: Provides consistency in coding style and brevity.
+  - empty_enum_arguments
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - empty_parameters
+
+  # Rationale: Provides consistency in coding style
+  - empty_parentheses_with_trailing_closure
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - empty_string
+
+  # Rationale: Provides consistency in coding style
+  - explicit_init
+
+  # Rationale: Prevents coder error
+  - fallthrough
+
+  # Rationale: Encourages better documentation
+  - fatal_error_message
+
+  # Rationale: Provides consistency
+  - file_header
+
+  # Rationale: Encourages using the right API to solve a problem
+  - first_where
+
+  # Rationale: Provides consistency in coding style
+  - flatmap_over_map_reduce
+
+  # Rationale: Encourages using the right API to solve a problem
+  - for_where
+
+  # Rationale: Prevents coder error, doesn't crash, makes coder be explicit about their assumptions
+  - force_cast
+
+  # Rationale: Prevents coder error, doesn't crash, makes coder be explicit about their assumptions
+  - force_try
+
+  # Rationale: Prevents coder error, doesn't crash, makes coder be explicit about their assumptions
+  - force_unwrapping
+
+  # Rationale: Provides consistency in coding style and brevity.
+  - implicit_getter
+
+  # Rationale: Encourages using the right API to solve a problem
+  - is_disjoint
+
+  # Rationale: Provides clarity and consistency by using the default parameter
+  - joined_default_parameter
+
+  # Rationale: Provides consistency in coding style
+  - last_where
+
+  # Rationale: Provides consistency in coding style
+  - leading_whitespace
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - legacy_cggeometry_functions
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - legacy_constant
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - legacy_constructor
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - legacy_hashing
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - legacy_nsgeometry_functions
+
+  # Rationale: Usage of proper access level
+  - lower_acl_than_parent
+
+  # Rationale: Usage of proper modifier order
+  - modifier_order
+
+  # Rationale: Provides consistency in coding style
+  - mark
+
+  # Rationale: Provides consistency in coding style
+  - multiline_parameters
+
+  # Rationale: Clarity of code
+  - multiple_closures_with_trailing_closure
+
+  # Rationale: Provides consistency in coding style
+  - no_space_in_method_call
+
+  # Rationale: Encourages coder best practices though language feature likely makes this obsolete
+  - notification_center_detachment
+
+  # Rationale: Provides consistency in coding style
+  - opening_brace
+
+  # Rationale: Provides consistency in coding style
+  - operator_usage_whitespace
+
+  # Rationale: Provides consistency in coding style
+  - function_name_whitespace
+
+  # Rationale: Prevents coder error
+  - overridden_super_call
+
+  # Rationale: Prevents unpredictable behavior
+  - override_in_extension
+
+  # Rationale: Promotes consistency and reduces duplication.
+  - pattern_matching_keywords
+
+  # Rationale: UI elements should only be configurable by their owners and not be exposed to others
+  - private_action
+
+  # Rationale: UI elements should only be configurable by their owners and not be exposed to others
+  - private_outlet
+
+  # Rationale: Keep internal details from being overexposed
+  - private_over_fileprivate
+
+  # Rationale: Prevents coder error
+  - private_unit_test
+
+  # Rationale: Prevents coder error
+  - prohibited_super_call
+
+  # Rationale: Provides consistency in coding style
+  - protocol_property_accessors_order
+
+  # Rationale: Provides consistency in coding style and brevity
+  - redundant_discardable_let
+
+  # Rationale: Provides consistency in coding style and brevity
+  - redundant_nil_coalescing
+
+  # Rationale: Provides consistency in coding style and brevity
+  - redundant_objc_attribute
+
+  # Rationale: Provides consistency in coding style and brevity
+  - implicit_optional_initialization
+
+  # Rationale: Provides consistency in coding style and brevity
+  - redundant_void_return
+
+  # Rationale: Provides consistency in coding style
+  - required_enum_case
+
+  # Rationale: Provides consistency in coding style
+  - return_arrow_whitespace
+
+  # Rationale: Provides consistency in coding style
+  - shorthand_operator
+
+  # Rationale: There should be only XCTestCase per file
+  - single_test_class
+
+  # Rationale: Provides consistency in coding style
+  - statement_position
+
+  # Rationale: Provides cleaniness of code
+  - superfluous_disable_command
+
+  # Rationale: Provides consistency in coding style
+  - switch_case_alignment
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - syntactic_sugar
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - trailing_comma
+
+  # Rationale: Provides consistency in coding style
+  - trailing_newline
+
+  # Rationale: Provides consistency in coding style and follows modern practices of the language
+  - trailing_semicolon
+
+  # Rationale: Provides consistency in coding style and brevity
+  - unneeded_break_in_switch
+
+  # Rationale: Provides consistency in coding style and brevity
+  - unused_control_flow_label
+
+  # Rationale: Provides consistency in coding style and brevity
+  - unused_closure_parameter
+
+  # Rationale: Provides consistency in coding style and brevity
+  - unused_enumerated
+
+  # Rationale: Provides consistency in coding style and brevity
+  - unused_optional_binding
+
+  # Rationale: Avoids issues where the setter is not using the value passed in.
+  - unused_setter_value
+
+  # Rationale: Prevents coder error
+  - valid_ibinspectable
+
+  # Rationale: Provides consistency in coding style
+  - vertical_parameter_alignment
+
+  # Rationale: Provides consistency in coding style
+  - vertical_parameter_alignment_on_call
+
+  # Rationale: Provides consistency in coding style
+  - vertical_whitespace
+  
+  # Rationale: Provides consistency in coding style
+  - vertical_whitespace_closing_braces
+
+  # Rationale: Prevents retain cycles and coder error
+  - weak_delegate
+
+  # Rationale: Encourages better documentation
+  - xctfail_message
+
+  # Rationale: Provides consistency in coding style
+  - yoda_condition
+
+  # Rationale: Encourages documentation
+  # - custom_todo
+  
+  # Rationale: Provides consistency in coding style.
+  - reduce_boolean
+  
+  # Rationale: == is not used for NSObject comparison, and could lead to confusion.
+  - nsobject_prefer_isequal
+  
+  # Rationale: Provides consistency of ordering within a type.
+  # Note: Excluded for Models/ directory (Codable structs require specific ordering)
+  - type_contents_order
+  
+  # Rationale: Prevents issues with using unowned.
+  - unowned_variable_capture
+  
+  # Rationale: Ensures all enums can be switched upon.
+  - duplicate_enum_cases
+  
+  # Rationale: Provides consistency in coding style.
+  - legacy_multiple
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+
+file_header:
+  required_pattern: |
+                    \/\/
+                    \/\/  .*?
+                    \/\/  .*?
+                    \/\/
+                    \/\/  Created by .*? on \d{1,2}(\/|\.)\d{1,2}(\/|\.)(\d{2}|\d{4})\.
+                    \/\/  Copyright (©|\(c\)) \d{4} .*?\. All rights reserved\.
+                    \/\/
+attributes:
+  always_on_same_line: ["@IBAction", "@IBSegueAction", "@NSManaged", "@discardableResult", "@escaping", "@objc"]
+
+type_contents_order:
+  order:
+    - case
+    - associated_type
+    - type_alias
+    - subtype
+    - [type_property, instance_property, ib_outlet, ib_inspectable]
+    - [initializer, deinitializer, type_method, view_life_cycle_method, subscript, other_method, ib_action]
+
+custom_rules:
+  force_https:
+    name: "Force HTTPS over HTTP"
+    regex: "((?i)http(?!s))"
+    match_kinds: string
+    message: "HTTPS should be favored over HTTP"
+    severity: warning
+#  custom_todo:
+#    name: "TODO Violation"
+#    regex: "(TODO).(?!.*(https&)).(?!.*issue)"
+#    match_kinds: comment
+#    message: "TODOs must include a link to the issue."
+  auto_generated_leftovers:
+    regex: 'func [^\n]*\{\n(\s*super\.[^\n]*\n(\s*\/\/[^\n]*\n)*|(\s*\/\/[^\n]*\n)+)\s*\}'
+    message: "Delete auto-generated functions that you don't use"
+#  numbers_smell:
+#    regex: '(return |case |\w\(|: |\?\? |\, |== |<=? |>=? |\+= |\-= |\/= |\*= |%= |\w\.\w+ = )\(*-?\d{2,}'
+#    message: "Numbers smell; define a constant instead."
+#    excluded: '.*Tests/'
+  already_true:
+    regex: "== true"
+    message: "Don't compare to true, just use the bool value."
+  already_bool:
+    regex: "== false"
+    message: "Don't compare to false, just use !value."
+  commented_code:
+    regex: '(?<!:|\/)\/\/\h*[a-z.](?!wiftlint)'
+    message: "Comment starting with lowercase letter - did you forget to delete old code?"
+  multiline_commented_code:
+    regex: '^\s*[a-z]'
+    match_kinds: comment
+    message: "Comment starting with lowercase letter - did you forget to delete old code?"
