@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9C760B38-AEB2-4D6B-9781-C2212F9DD264"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1C8C29BE-468A-4230-A401-00DFF817EDDE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVMProject/Model/Network/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "fetchRate(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1C8C29BE-468A-4230-A401-00DFF817EDDE - 241d47c83f715824"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in MVVMProject.NetworkService.fetchRate(completion: (Swift.Result&lt;MVVMProject.ExchangeRate, MVVMProject.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MVVMProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroshovychs/Iura-tasks/MVVMProject/MVVMProject/Model/Network/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19">
+               </Location>
+               <Location
+                  uuid = "1C8C29BE-468A-4230-A401-00DFF817EDDE - d3616145a6345a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in MVVMProject.NetworkService.fetchRate(completion: (Swift.Result&lt;MVVMProject.ExchangeRate, MVVMProject.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MVVMProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroshovychs/Iura-tasks/MVVMProject/MVVMProject/Model/Network/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E817EE2-2345-4481-9EEA-1069B4D34ED6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVMProject/ViewModel/RateViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "fetchRate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

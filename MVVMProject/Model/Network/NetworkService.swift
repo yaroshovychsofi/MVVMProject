@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkService: NetworkServiceProtocol {
-    func fetchRate(completion: @escaping (Result<ExchangeRate, any Error>) -> Void) {
+    func fetchRate(completion: @escaping (Result<ExchangeRate, NetworkError>) -> Void) {
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
             let success = Bool.random()
             if success {

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func fetchRate(completion: @escaping (Result<ExchangeRate, Error>) -> Void)
+    // Function is called on the main thread
+    func fetchRate(completion: @escaping (Result<ExchangeRate, NetworkError>) -> Void)
 }
